@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# Use a relative path for the model so it works on Render
+# Use relative path for the model (works on Render and locally)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models', 'loan_approval_pipeline.joblib')
 model = joblib.load(MODEL_PATH)
 
