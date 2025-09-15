@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan-Dash X</title>
+    <!-- Use Rajdhani for a modern, aesthetic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #000;
+            background-image: url('https://thumbs.dreamstime.com/b/white-spiral-vertical-abstract-dust-overlay-texture-powder-splash-overlay-explosion-black-white-spiral-vertical-abstract-dust-199787943.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #eaeaea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 420px;
+            margin: 64px auto;
+            background: rgba(10, 10, 10, 0.70);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.65);
+            padding: 40px 38px 30px 38px;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+        /* TRANSPARENT, AESTHETIC HEADING */
+        h2 {
+            font-family: 'Rajdhani', 'Orbitron', 'Montserrat', Arial, sans-serif;
+            font-size: 2.6em;
+            font-weight: 700;
+            color: #fff;
+            padding: 14px 0 14px 0;
+            margin-bottom: 36px;
+            margin-top: 0;
+            letter-spacing: 2px;
+            border-radius: 12px;
+            background: rgba(20, 20, 20, 0.43); /* Transparent, blends with background */
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            text-shadow: 0 3px 20px #000, 0 0px 2px #fff;
+            display: block;
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
+        label, .tips, input, select, button {
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #eaeaea;
+            font-weight: 500;
+            text-shadow: 0 1px 2px #000;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            background: rgba(20,20,20,0.8);
+            border: 1px solid #fff;
+            color: #f1f1f1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+        }
+        input[type="text"]::placeholder {
+            color: #bbb;
+        }
+        input[type="text"]:focus, select:focus {
+            border-color: #fafafa;
+            box-shadow: 0 0 6px #fff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #fff;
+            color: #222;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+            letter-spacing: 1px;
+        }
+        button:hover {
+            background: #222;
+            color: #fff;
+            border-color: #fff;
+        }
+        .tips {
+            font-size: 1em;
+            color: #f3f3f3;
+            margin: 16px 0 4px 0;
+            text-align: center;
+            opacity: 0.8;
+            text-shadow: 0 1px 2px #000;
+        }
+        .tips b {
+            color: #fff;
+            font-weight: 600;
+        }
+        @media (max-width: 540px) {
+            .container { margin: 18px; padding: 14px; }
+            h2 { font-size: 1.45em; padding: 7px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Approval Predictor</h2>
+        <!-- rest of your form here -->
+        <form action="/predict" method="post">
+            <label for="income">Income (in thousands)</label>
+            <input type="text" id="income" name="income" placeholder="e.g. 85" required>
+
+            <label for="credit_score">Credit Score (0-1000)</label>
+            <input type="text" id="credit_score" name="credit_score" placeholder="e.g. 720" required>
+
+            <label for="loans_ongoing">Loans Ongoing (count)</label>
+            <input type="text" id="loans_ongoing" name="loans_ongoing" placeholder="e.g. 1" required>
+
+            <label for="age">Age (years)</label>
+            <input type="text" id="age" name="age" placeholder="e.g. 32" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select gender...</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit">Predict Approval</button>
+        </form>
+        <div class="tips">
+            <b>Tip:</b> All fields required. Use realistic values.<br>
+            Income: 20-150, Credit: 400-1000, Age: 18-75.
+        </div>
+    </div>
+</body>
+</html>
