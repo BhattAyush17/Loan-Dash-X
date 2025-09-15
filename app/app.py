@@ -6,8 +6,9 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'loan_approval_pipeline.joblib')
-model = joblib.load(r"C:\Users\Ayush Bhatt\DataScince\Projects\models\loan_approval_pipeline.joblib")
+# Use a relative path for the model so it works on Render
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models', 'loan_approval_pipeline.joblib')
+model = joblib.load(MODEL_PATH)
 
 def preprocess_input(income, credit_score, loans_ongoing, age, gender):
     try:
@@ -16,7 +17,7 @@ def preprocess_input(income, credit_score, loans_ongoing, age, gender):
         loans_ongoing = int(loans_ongoing)
         age = int(age)
         gender = gender
-    except:
+    except Exception:
         return None
     return pd.DataFrame({
         "income": [income],
