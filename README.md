@@ -1,4 +1,4 @@
-[[# Loan-Dash X: Loan Approval Predictor
+ Loan-Dash X: Loan Approval Predictor
 
 [![Watch the demo](https://img.youtube.com/vi/IkQV3ysOAuc/0.jpg)](https://youtu.be/IkQV3ysOAuc)
 
