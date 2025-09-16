@@ -60,7 +60,7 @@ def predict():
     gender = request.form.get('gender')
     new_data = preprocess_input(income, credit_score, loans_ongoing, age, gender)
     if new_data is None:
-        flash("Invalid input. Please enter: Income (20-150), Credit Score (300-900), Loans Ongoing (0-20), Age (18-75), and select Gender.")
+        flash("Invalid input. Please enter: Income (20k-10L), Credit Score (300-900), Loans Ongoing (0-20), Age (18-75), and select Gender.")
         return render_template("result.html", prediction_text="0%")
     try:
         pred_proba = model.predict_proba(new_data)[0][1]
