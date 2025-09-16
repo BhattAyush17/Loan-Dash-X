@@ -54,7 +54,7 @@
             font-weight: 500;
             text-shadow: 0 1px 2px #000;
         }
-        input[type="text"], select {
+        input[type="number"], select {
             width: 100%;
             padding: 10px 12px;
             margin-bottom: 20px;
@@ -67,10 +67,10 @@
             transition: border-color 0.2s, box-shadow 0.2s;
             box-shadow: 0 1px 2px rgba(0,0,0,0.25);
         }
-        input[type="text"]::placeholder {
+        input[type="number"]::placeholder {
             color: #bbb;
         }
-        input[type="text"]:focus, select:focus {
+        input[type="number"]:focus, select:focus {
             border-color: #fafafa;
             box-shadow: 0 0 6px #fff;
         }
@@ -96,7 +96,7 @@
         .tips {
             font-size: 1em;
             color: #f3f3f3;
-            margin: 16px 0 4px 0;
+            margin: 8px 0 14px 0;
             text-align: center;
             opacity: 0.8;
             text-shadow: 0 1px 2px #000;
@@ -135,16 +135,20 @@
         {% endwith %}
         <form action="/predict" method="post">
             <label for="income">Income (in thousands)</label>
-            <input type="text" id="income" name="income" placeholder="e.g. 85" required>
+            <input type="number" id="income" name="income" min="20" max="150" placeholder="e.g. 85" required>
+            <div class="tips">Enter your monthly salary between <b>20</b> and <b>150</b> (₹20,000–₹150,000).</div>
 
-            <label for="credit_score">Credit Score (0-1000)</label>
-            <input type="text" id="credit_score" name="credit_score" placeholder="e.g. 720" required>
+            <label for="credit_score">Credit Score (300-900)</label>
+            <input type="number" id="credit_score" name="credit_score" min="300" max="900" placeholder="e.g. 720" required>
+            <div class="tips">Enter your credit score between <b>300</b> and <b>900</b>.</div>
 
             <label for="loans_ongoing">Loans Ongoing (count)</label>
-            <input type="text" id="loans_ongoing" name="loans_ongoing" placeholder="e.g. 1" required>
+            <input type="number" id="loans_ongoing" name="loans_ongoing" min="0" max="20" placeholder="e.g. 1" required>
+            <div class="tips">Enter your current number of loans (usually 0-5).</div>
 
             <label for="age">Age (years)</label>
-            <input type="text" id="age" name="age" placeholder="e.g. 32" required>
+            <input type="number" id="age" name="age" min="18" max="75" placeholder="e.g. 32" required>
+            <div class="tips">Enter your age between <b>18</b> and <b>75</b>.</div>
 
             <label for="gender">Gender</label>
             <select id="gender" name="gender" required>
@@ -157,8 +161,8 @@
             <button type="submit">Predict Approval</button>
         </form>
         <div class="tips">
-            <b>Tip:</b> All fields required. Use realistic values.<br>
-            Income: 20-150, Credit: 400-1000, Age: 18-75.
+            <b>Tip:</b> All fields required. Use realistic values for best results.<br>
+            Income: 20-150, Credit: 300-900, Age: 18-75.
         </div>
     </div>
 </body>
