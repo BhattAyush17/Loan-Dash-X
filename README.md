@@ -169,8 +169,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 - **Author:** [Ayush Bhatt](https://github.com/BhattAyush17)
-- **LinkedIn:** [Ayush Bhatt](https://www.linkedin.com/in/ayushbhatt17/)
-- **Email:** ayushbhatt17@gmail.com
+
 
 ---
 
