@@ -21,6 +21,19 @@ def preprocess_input(income, credit_score, loans_ongoing, age, gender):
         loans_ongoing = int(loans_ongoing)
         age = int(age)
         gender = gender
+
+        # Backend validation: realistic input ranges
+        if not (20 <= income <= 150):
+            return None
+        if not (300 <= credit_score <= 900):
+            return None
+        if not (18 <= age <= 75):
+            return None
+        if loans_ongoing < 0 or loans_ongoing > 20:
+            return None
+        if gender not in ["M", "F", "Other"]:
+            return None
+
     except Exception:
         return None
     return pd.DataFrame({
@@ -47,7 +60,7 @@ def predict():
     gender = request.form.get('gender')
     new_data = preprocess_input(income, credit_score, loans_ongoing, age, gender)
     if new_data is None:
-        flash("Invalid input.")
+        flash("Invalid input. Please enter: Income (20-150), Credit Score (300-900), Loans Ongoing (0-20), Age (18-75), and select Gender.")
         return render_template("result.html", prediction_text="0%")
     try:
         pred_proba = model.predict_proba(new_data)[0][1]
