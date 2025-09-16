@@ -135,8 +135,8 @@
         {% endwith %}
         <form action="/predict" method="post">
             <label for="income">Income (in thousands)</label>
-            <input type="number" id="income" name="income" min="20" max="150" placeholder="e.g. 85" required>
-            <div class="tips">Enter your monthly salary between <b>20</b> and <b>150</b> (₹20,000–₹150,000).</div>
+           <input type="number" id="income" name="income" min="20" max="1000000" placeholder="e.g. 85000" required>
+           <div class="tips">Enter your monthly salary between <b>20</b> and <b>10,00,000</b> (₹20,000–₹10 crore).</div>
 
             <label for="credit_score">Credit Score (300-900)</label>
             <input type="number" id="credit_score" name="credit_score" min="300" max="900" placeholder="e.g. 720" required>
