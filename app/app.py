@@ -23,7 +23,7 @@ def preprocess_input(income, credit_score, loans_ongoing, age, gender):
         gender = gender
 
         # Backend validation: realistic input ranges
-        if not (20 <= income <= 150):
+        if not (20 <= income <= 1000000):
             return None
         if not (300 <= credit_score <= 900):
             return None
