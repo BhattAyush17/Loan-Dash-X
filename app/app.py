@@ -45,5 +45,5 @@ def predict():
     pred_proba = model.predict_proba(new_data)[0][1]
     return render_template("result.html", prediction_text=f"{pred_proba:.0%}")
 
-# Do NOT include 'if __name__ == "__main__": app.run()'
-# Gunicorn will serve this app object directly.
+
+
