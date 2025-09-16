@@ -6,9 +6,13 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# Use relative path for the model (from app/app.py to models/loan_approval_pipeline.joblib)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'loan_approval_pipeline.joblib')
-model = joblib.load(MODEL_PATH)
+
+try:
+    model = joblib.load(MODEL_PATH)
+except Exception as e:
+    model = None
+    print(f"Model loading failed: {e}")
 
 def preprocess_input(income, credit_score, loans_ongoing, age, gender):
     try:
@@ -33,6 +37,9 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    if model is None:
+        flash("Model not loaded. Please contact admin.")
+        return render_template("result.html", prediction_text="Error")
     income = request.form.get('income')
     credit_score = request.form.get('credit_score')
     loans_ongoing = request.form.get('loans_ongoing')
@@ -42,8 +49,9 @@ def predict():
     if new_data is None:
         flash("Invalid input.")
         return render_template("result.html", prediction_text="0%")
-    pred_proba = model.predict_proba(new_data)[0][1]
-    return render_template("result.html", prediction_text=f"{pred_proba:.0%}")
-
-
-
+    try:
+        pred_proba = model.predict_proba(new_data)[0][1]
+        return render_template("result.html", prediction_text=f"{pred_proba:.0%}")
+    except Exception as e:
+        flash(f"Prediction failed: {e}")
+        return render_template("result.html", prediction_text="Error")
