@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Loan-Dash X</title>
-   
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -28,7 +27,6 @@
             position: relative;
             backdrop-filter: blur(2px);
         }
-        /* TRANSPARENT, AESTHETIC HEADING */
         h2 {
             font-family: 'Rajdhani', 'Orbitron', 'Montserrat', Arial, sans-serif;
             font-size: 2.6em;
@@ -39,7 +37,7 @@
             margin-top: 0;
             letter-spacing: 2px;
             border-radius: 12px;
-            background: rgba(20, 20, 20, 0.43); /* Transparent, blends with background */
+            background: rgba(20, 20, 20, 0.43);
             box-shadow: 0 2px 12px rgba(0,0,0,0.25);
             text-shadow: 0 3px 20px #000, 0 0px 2px #fff;
             display: block;
@@ -107,6 +105,15 @@
             color: #fff;
             font-weight: 600;
         }
+        .flashes {
+            margin-bottom: 18px;
+            color: #ffbaba;
+            background: rgba(70,0,0,0.5);
+            border-radius: 7px;
+            padding: 8px 14px;
+            text-align: center;
+            font-size: 1.08em;
+        }
         @media (max-width: 540px) {
             .container { margin: 18px; padding: 14px; }
             h2 { font-size: 1.45em; padding: 7px 0; }
@@ -116,7 +123,16 @@
 <body>
     <div class="container">
         <h2>Loan Approval Predictor</h2>
-        <!-- rest of your form here -->
+        <!-- Flask flash messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flashes">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
         <form action="/predict" method="post">
             <label for="income">Income (in thousands)</label>
             <input type="text" id="income" name="income" placeholder="e.g. 85" required>
