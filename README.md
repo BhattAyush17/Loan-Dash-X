@@ -1,8 +1,18 @@
 # Loan-Dash X: Loan Approval Predictor
 
+**Loan-Dash X** is a machine learning-powered web application that predicts the likelihood of loan approval based on a user's financial and personal information. Built with Python and Flask, it leverages a robust ML pipeline to provide fast and reliable predictions, making it a valuable tool for both users and financial institutions.
+
+## Demo
+
+<div align="center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/IkQV3ysOAuc" title="Loan-Dash X Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 [![Watch the demo](https://img.youtube.com/vi/IkQV3ysOAuc/0.jpg)](https://youtu.be/IkQV3ysOAuc)
 
-**Loan-Dash X** is a machine learning-powered web application that predicts the likelihood of loan approval based on a user's financial and personal information. Built with Python and Flask, it leverages a robust ML pipeline to provide fast and reliable predictions, making it a valuable tool for both users and financial institutions.
+Feel free to explore screenshots below or deploy locally for hands-on experience.
+
+
 
 ---
 
