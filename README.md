@@ -12,8 +12,6 @@
 
 Feel free to explore screenshots below or deploy locally for hands-on experience.
 
-
-
 ---
 
 ## Table of Contents
@@ -49,14 +47,6 @@ Feel free to explore screenshots below or deploy locally for hands-on experience
 
 - **Scalable Architecture:**  
   Built with Flask for straightforward deployment and future expansion.
-
----
-
-## Demo
-
-> [Watch Demo Video](https://youtu.be/IkQV3ysOAuc)
-
-Feel free to explore screenshots below or deploy locally for hands-on experience.
 
 ---
 
