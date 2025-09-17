@@ -4,22 +4,13 @@
 
 ## Demo
 
-Experience Loan-Dash X in action with the live demo playback below. The video will start automatically for a quick preview right on this page.  
-To watch in full screen or open on YouTube, simply click anywhere on the video area.
+Experience Loan-Dash X in action with the live demo playback below!
 
-<div style="position:relative; width:560px; max-width:100%;">
-  <a href="https://www.youtube.com/watch?v=IkQV3ysOAuc" target="_blank" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;display:block;text-decoration:none;">
-    <span style="display:none;">Watch on YouTube</span>
-  </a>
-  <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/IkQV3ysOAuc?autoplay=1"
-    title="Loan-Dash X Demo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    style="position:relative;z-index:1;">
-  </iframe>
-</div>
+[![Loan-Dash X Demo](https://img.youtube.com/vi/IkQV3ysOAuc/0.jpg)](https://www.youtube.com/watch?v=IkQV3ysOAuc "Watch Loan-Dash X Demo on YouTube")
+
+> Click the image above to watch the demo on YouTube.
+
+To watch in full screen or open on YouTube, simply click anywhere on the video area.
 
 > Feel free to explore the screenshots below for hands-on experience.
 
